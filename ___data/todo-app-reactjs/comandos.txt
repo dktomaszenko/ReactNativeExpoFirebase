@@ -1,0 +1,8 @@
+INSTALAR create-react-app
+    npm i -g create-react-app
+
+CREAR LA APLICACIÓN DE TODOS
+    npx create-react-app todo-app-reactjs
+
+ARRANCAR LA APLICACIÓN
+    cd todo-app-reactjs && npm start
