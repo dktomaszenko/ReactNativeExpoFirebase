@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import TodoItemHead from "./components/TodoItemHead";
 import TodoForm from "./components/TodoForm";
 
 class App extends Component {
