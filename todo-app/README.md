@@ -1,3 +1,22 @@
+------------------------------------------------------------------
+Darek:
+
+preinstalar global:
+
+`npm i -g create-react-app`
+
+crear nuevo proyecto
+
+`npx create-react-app todo-app`
+
+instalamos yarn o arancamos server con npm:
+
+`yarn start`
+
+---------------------------------------------------------------------------------
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
