@@ -40,8 +40,46 @@ export default class TodoItem extends Component {
                     type="button"
                     className="btn btn-warning text-white"
                     onClick={this.onEditMode.bind(this)}
-                >Actualizar</button>
+                >
+                    Actualizar
+                </button>
+            );
+        } else {
+            input = todo;
+            actionButton = (
+                <button
+                    type="button"
+                    className="btn btn-warning text-white"
+                    onClick={this.onEditMode.bind(this)}
+                >
+                    Editar
+                </button>
             );
         }
+        return {input, actionButton};
     }
-}
+
+    render () {
+        const {index, onRemove} = this.props;
+        const dynamicComponents = this.dynamicComponents();
+
+        return (
+            <tr style={{textAlign: 'center'}}>
+                <th scope="col">#</th>
+                <th scope="col">{index + 1}</th>
+                <th scope="col">{dynamicComponents.input}</th>
+                <th scope="col">
+                    <div className="btn-group" role="group">
+                        {dynamicComponents.actionButton}
+                        <button
+                            type="button"
+                            className="btn btn-danger"
+                            onClick={onRemove}
+                        >
+                        Eliminar
+                        </button>
+                    </div>
+                </th>
+            </tr>
+        );
+    }
