@@ -13,7 +13,7 @@ export default class TodoList extends Component {
     }
 
     updateTodo (todo, index){
-        let todos = this.state.todos.slice();
+        let todos = this.state.todos;
         todos[index] = todo;
         this.setState(()=>{
             return {
@@ -23,9 +23,10 @@ export default class TodoList extends Component {
     }
 
     removeTodo(index){
-        let todos = this.state.todos.slice();
+        let todos = this.state.todos;
         todos.splice(index, 1);
         this.setState({todos});
+        console.log(this.state.todos);
     }
 
     addTodo(todo){
