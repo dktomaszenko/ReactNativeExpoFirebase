@@ -1,38 +1,39 @@
 import React, {Component} from 'react';
 
 export default class TodoItem extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             editMode: false,
             todo: props.children
         }
     }
-    onEditMode () {
-        if(this.state.editMode){
+
+    onEditMode() {
+        if (this.state.editMode) {
             const {onUpdateTodo} = this.props;
             onUpdateTodo(this.state.todo);
         }
         this.setState({
-          editMode: !this.state.editMode
+            editMode: !this.state.editMode
         })
     }
 
-    handleChange(evt){
+    handleChange(evt) {
         this.setState({todo: evt.target.value});
     }
 
-    dynamicComponents () {
+    dynamicComponents() {
         let input, actionButton;
         const {editMode, todo} = this.state;
 
-        if(editMode){
+        if (editMode) {
             input = (
                 <input
                     type="text"
                     className="form-control"
                     value={todo}
-                    onChange={(e)=> this.handleChange(v)}
+                    onChange={(e) => this.handleChange(e)}
                 />
             );
             actionButton = (
@@ -59,7 +60,7 @@ export default class TodoItem extends Component {
         return {input, actionButton};
     }
 
-    render () {
+    render() {
         const {index, onRemove} = this.props;
         const dynamicComponents = this.dynamicComponents();
 
@@ -76,10 +77,11 @@ export default class TodoItem extends Component {
                             className="btn btn-danger"
                             onClick={onRemove}
                         >
-                        Eliminar
+                            Eliminar
                         </button>
                     </div>
                 </th>
             </tr>
-        );
+        )
     }
+}
