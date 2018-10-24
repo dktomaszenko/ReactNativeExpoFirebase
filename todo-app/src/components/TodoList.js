@@ -8,7 +8,7 @@ export default class TodoList extends Component {
     constructor (){
         super();
         this.state = {
-            todos: ['todo1']
+            todos: ['todo1','todo2', 'todo3']
         };
     }
 
